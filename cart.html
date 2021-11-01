@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 宿主文件 -->
+    <!-- Mustache -->
+    <div id="app">
+        <h2 :title="title">
+            {{title}}
+        </h2>
+         <!-- 使用v-for指令进行课程cources列表渲染, c是临时变量, 这里必须填上data中的cources列表 -->
+         <div v-for="c in cources" :key="c">
+            {{ c }}
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data(){
+                return{
+                    title:'开课吧购物车',
+                    cources:['web全栈','web高级']
+                }
+            }
+        })
+    </script>
+</body>
+</html>
